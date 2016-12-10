@@ -125,6 +125,7 @@ module Rouge
         rule /[(\[,]/, Punctuation, :expr_start
         rule /;/, Punctuation, :statement
         rule /[)\].]/, Punctuation
+        rule /[']/, Punctuation
 
         rule /`/ do
           token Str::Double

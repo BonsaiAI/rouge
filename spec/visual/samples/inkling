@@ -25,7 +25,7 @@ end
 concept height is classifier
     predicts (Action)
     follows input(GameState)
-    feeds output
+    feeds 'output'
 end
 
 curriculum height_curriculum
