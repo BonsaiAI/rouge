@@ -19,7 +19,7 @@ end
 
 simulator acrobot_simulator(AcrobotConfig)
     action (Action)
-    state (GameState)
+    state (GameState) # comment
 end
 
 concept height is classifier

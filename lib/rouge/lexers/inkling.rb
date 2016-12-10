@@ -11,17 +11,9 @@ module Rouge
       filenames '*.ink', '*.inkling'
       mimetypes 'application/ink', 'application/inkling'
 
-      state :multiline_comment do
-        rule %r([*]/), Comment::Multiline, :pop!
-        rule %r([^*/]+), Comment::Multiline
-        rule %r([*/]), Comment::Multiline
-      end
-
       state :comments_and_whitespace do
         rule /\s+/, Text
-        rule /<!--/, Comment # really...?
-        rule %r(//.*?$), Comment::Single
-        rule %r(/[*]), Comment::Multiline, :multiline_comment
+        rule %r(#.*?$), Comment::Single
       end
 
       state :expr_start do
