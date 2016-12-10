@@ -1,0 +1,6 @@
+concept conceptName
+   is (classifier | estimator)
+   predicts (outputSchema)
+   follows preceedingConcept1, input(schemaName)
+   feeds output, subsequentconcept
+end
