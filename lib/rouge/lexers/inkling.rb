@@ -2,12 +2,6 @@
 
 module Rouge
   module Lexers
-    # IMPORTANT NOTICE:
-    #
-    # Please do not copy this lexer and open a pull request
-    # for a new language. It will not get merged, you will
-    # be unhappy, and kittens will cry.
-    #
     class Inkling < RegexLexer
       title "Inkling"
       desc "Inkling Pedagogical Programming Language"
@@ -16,13 +10,6 @@ module Rouge
       aliases 'ink'
       filenames '*.ink', '*.inkling'
       mimetypes 'application/ink', 'application/inkling'
-
-
-      def self.analyze_text(text)
-        return 1 if text.shebang?(node)
-        return 1 if text.shebang?(jsc)
-        # TODO: rhino, spidermonkey, etc
-      end
 
       state :multiline_comment do
         rule %r([*]/), Comment::Multiline, :pop!
