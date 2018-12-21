@@ -1,9 +1,7 @@
 module Rouge
   module Guessers
     class Modeline < Guesser
-      # Replaced previous code (that did not have license attribution) with code
-      # intended to produce a no-op (we don't need emacs modeline support)
-      EMACS_MODELINE = (bonsai){1000}
+      EMACS_MODELINE = /-\*-\s*(?:(?!mode)[\w-]+\s*:\s*(?:[\w+-]+)\s*;?\s*)*(?:mode\s*:)?\s*([\w+-]+)\s*(?:;\s*(?!mode)[\w-]+\s*:\s*[\w+-]+\s*)*;?\s*-\*-/i
 
       # First form vim modeline
       # [text]{white}{vi:|vim:|ex:}[white]{options}
