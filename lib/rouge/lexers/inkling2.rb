@@ -6,7 +6,7 @@ module Rouge
       title "Inkling"
       desc "Inkling Brain Definition Language"
 
-      tag 'inkling'
+      tag 'inkling2'
       aliases 'ink'
       filenames '*.ink', '*.inkling'
       mimetypes 'application/ink', 'application/inkling'
@@ -76,35 +76,10 @@ module Rouge
 
       def self.keywords
         @keywords ||= Set.new %w(
-        as concept configure constrain action copy curriculum data datastore debug
-        easy end expect feeds follows format from generator hard import in into is
-        lesson let maximize medium minimize objective predicts schema select send
-        simulator state stream test train unit until using validate where with yield
-        )
-      end
-
-      def self.declarations
-        @declarations ||= Set.new %w(var let with function)
-      end
-
-      def self.reserved
-        @reserved ||= Set.new %w(
-        Bool Byte Double false Float32 Float64 input Int16 Int32 Int64 Int8
-        Luminance Matrix output String true UInt16 UInt32 UInt64 UInt8
-        )
-      end
-
-      def self.constants
-        @constants ||= Set.new %w(true false null NaN Infinity undefined)
-      end
-
-      def self.builtins
-        @builtins ||= %w(
-          Array Boolean Date Error Function Math netscape
-          Number Object Packages RegExp String sun decodeURI
-          decodeURIComponent encodeURI encodeURIComponent
-          Error eval isFinite isNaN parseFloat parseInt document this
-          window
+        action algorithm and concept config const constraint curriculum else
+        experiment function graph if inkling input lesson not or output package
+        return reward simulator source state step terminal threshold type
+        using var number string false true
         )
       end
 

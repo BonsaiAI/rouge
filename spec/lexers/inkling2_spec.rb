@@ -8,15 +8,15 @@ describe Rouge::Lexers::Inkling do
 
     it 'guesses by filename' do
       assert_guess :filename => 'foo.ink'
-      assert_guess :filename => 'foo.ink1'
+      assert_guess :filename => 'foo.ink2'
       assert_guess :filename => 'foo.inkling'
     end
 
     it 'guesses by mimetype' do
       assert_guess :mimetype => 'text/ink'
-      assert_guess :mimetype => 'text/ink1'
+      assert_guess :mimetype => 'text/ink2'
       assert_guess :mimetype => 'application/ink'
-      assert_guess :mimetype => 'application/ink1'
+      assert_guess :mimetype => 'application/ink2'
     end
 
     it 'guesses by source' do
