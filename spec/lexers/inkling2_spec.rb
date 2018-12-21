@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- #
 
-describe Rouge::Lexers::Inkling do
-  let(:subject) { Rouge::Lexers::Inkling.new }
+describe Rouge::Lexers::Inkling2 do
+  let(:subject) { Rouge::Lexers::Inkling2.new }
 
   describe 'guessing' do
     include Support::Guessing

@@ -2,7 +2,7 @@
 
 module Rouge
   module Lexers
-    class Inkling < RegexLexer
+    class Inkling2 < RegexLexer
       title "Inkling"
       desc "Inkling Brain Definition Language"
 
