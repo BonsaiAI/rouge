@@ -127,10 +127,6 @@ module Rouge
           elsif self.class.declarations.include? m[0]
             token Keyword::Declaration
             push :expr_start
-          elsif self.class.reserved.include? m[0]
-            token Keyword::Reserved
-          elsif self.class.constants.include? m[0]
-            token Keyword::Constant
           elsif self.class.builtins.include? m[0]
             token Name::Builtin
           else
