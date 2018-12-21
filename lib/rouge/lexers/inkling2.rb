@@ -173,11 +173,6 @@ module Rouge
           goto :statement
         end
 
-        rule /(#{id})(\s*)(:)/ do
-          groups Name::Attribute, Text, Punctuation
-          push :expr_start
-        end
-
         rule /:/, Punctuation
         mixin :root
       end
