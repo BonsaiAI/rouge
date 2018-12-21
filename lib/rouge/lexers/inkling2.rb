@@ -83,6 +83,14 @@ module Rouge
         )
       end
 
+      def self.builtins
+        @builtins ||= %w(
+          Number Bool Float32 Float64
+          Int8 Int16 Int32 Int64
+          UInt8 UInt16 UInt32 UInt64
+          Image Gray
+        )
+      end
       def self.id_regex
         /[$a-z_][a-z0-9_]*/io
       end
@@ -123,9 +131,6 @@ module Rouge
         rule id do |m|
           if self.class.keywords.include? m[0]
             token Keyword
-            push :expr_start
-          elsif self.class.declarations.include? m[0]
-            token Keyword::Declaration
             push :expr_start
           elsif self.class.builtins.include? m[0]
             token Name::Builtin
