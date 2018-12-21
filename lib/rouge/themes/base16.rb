@@ -75,6 +75,9 @@ module Rouge
             Name::Class,
             Name::Constant, :fg => :base0A
 
+      style Name::Other,
+            Name::Builtin, :fg => :base09
+
       style Name::Attribute, :fg => :base0D
 
       style Literal::Number,
@@ -139,7 +142,7 @@ module Rouge
         palette base06: "#f5f4f1"
         palette base07: "#f9f8f5"
         palette base08: "#f92672"
-        palette base09: "#fd971f"
+        palette base09: "#47e744"
         palette base0A: "#f4bf75"
         palette base0B: "#ffffff"
         palette base0C: "#a1efe4"
