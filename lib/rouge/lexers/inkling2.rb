@@ -111,8 +111,8 @@ module Rouge
         rule /[']/, Punctuation
 
         rule /`/ do
-          token Str::Double
-          push :template_string
+          token Name::Other
+          push :escaped_identifier_string
         end
 
         rule /[?]/ do
@@ -196,16 +196,10 @@ module Rouge
         mixin :root
       end
 
-      # template strings
-      state :template_string do
-        rule /\${/, Punctuation, :template_string_expr
-        rule /`/, Str::Double, :pop!
-        rule /(\\\\|\\[\$`]|[^\$`]|\$(?!{))*/, Str::Double
-      end
-
-      state :template_string_expr do
-        rule /}/, Punctuation, :pop!
-        mixin :root
+      # escaped identifier strings
+      state :escaped_identifier_string do
+        rule /`/, Name::Other, :pop!
+        rule /(\\\\|\\[\$`]|[^\$`]|\$(?!{))*/, Name::Other
       end
     end
   end
