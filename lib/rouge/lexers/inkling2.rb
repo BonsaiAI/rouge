@@ -154,10 +154,6 @@ module Rouge
           goto :expr_start
         end
 
-        rule /(#{id})(\s*)(:)/ do
-          groups Name::Label, Text, Punctuation
-        end
-
         rule /[{}]/, Punctuation
 
         mixin :expr_start
